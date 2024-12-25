@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 9c645a2ef7c0a8679b1088981e286357823a2291322de6d0b9ee523212933e9a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -20,11 +20,12 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
+    - setuptools
   run:
     - click
-    - protobuf
-    - python
+    - protobuf <=3.21.0
+    - python >={{ python_min }}
     - six
 
 test:
@@ -36,6 +37,7 @@ test:
     - geobuf --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/mapbox/pygeobuf
