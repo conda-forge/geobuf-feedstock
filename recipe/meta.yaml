@@ -1,5 +1,5 @@
 {% set name = "geobuf" %}
-{% set version = "1.1.1" %}
+{% set version = "2.0.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9c645a2ef7c0a8679b1088981e286357823a2291322de6d0b9ee523212933e9a
+  sha256: 96a347cd8443cc53a65f34f958b45b0e45c4cca8f1ca3b72078a3aec97605a72
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -24,7 +24,7 @@ requirements:
     - setuptools
   run:
     - click
-    - protobuf <=3.21.0
+    - protobuf
     - python >={{ python_min }}
     - six
 
