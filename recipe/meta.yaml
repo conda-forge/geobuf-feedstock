@@ -24,7 +24,7 @@ requirements:
     - setuptools
   run:
     - click
-    - protobuf <=3.21.0
+    - protobuf
     - python >={{ python_min }}
     - six
 
