@@ -1,5 +1,5 @@
 {% set name = "geobuf" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 96a347cd8443cc53a65f34f958b45b0e45c4cca8f1ca3b72078a3aec97605a72
+  sha256: 73f173e42e50ca546ad81be8ac33511bf09d0fcb58799fa50ef0ee5f01c77561
 
 build:
   number: 0
